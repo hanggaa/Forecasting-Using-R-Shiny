@@ -8,3 +8,4 @@ Team Bangkit Cap-0123
 2. Dede
 3. Salsafira
 4. Tasya 
+5. Selvi
