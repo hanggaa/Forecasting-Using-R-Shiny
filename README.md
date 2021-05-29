@@ -9,3 +9,4 @@ Team Bangkit Cap-0123
 3. Salsafira
 4. Tasya 
 5. Selvi
+6. Cael
