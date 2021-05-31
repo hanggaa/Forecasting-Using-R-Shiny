@@ -7,8 +7,8 @@ ui <- dashboardPage(
     ## Sidebar content
     sidebar <- dashboardSidebar(
         sidebarMenu(
-            menuItem("Rice Production", tabName = "dashboard1", icon = icon("dashboard")),
-            menuItem("Rice Price", tabName = "dashboard2", icon = icon("dashboard")),
+            menuItem("Rice Production", tabName = "dashboard1", icon = icon("chart-bar")),
+            menuItem("Rice Price", tabName = "dashboard2", icon = icon("chart-bar")),
             menuItem("Controller", tabName = "controller", icon = icon("th"))
         )
     ),
@@ -43,6 +43,21 @@ ui <- dashboardPage(
                        )
                     )
             ),
+            # Third tab content
+            tabItem(tabName = "controller",
+                    fluidRow(
+                        box(title = "Choose Regional Zone of Rice", status = "danger", solidHeader = TRUE, collapsible = TRUE,
+                            selectInput("reg",
+                                        label = "Choose Regional",
+                                        choices = c("West Java",
+                                                    "Central Java",
+                                                    "East Java",
+                                                    "South Sulawesi"),
+                                        selected = "East Java")
+                        )
+                        
+                    )
+            )
         )
     ),
     dashboardPage(
@@ -50,40 +65,54 @@ ui <- dashboardPage(
         sidebar,
         body
     )
-    mainPanel({
-        box(title = "Forecast")
-    })
 )
 
 server <- function(input, output) {
     #Rice Produce
-    hangga = read.csv("D:/supply_beras.csv",sep = ",")
+    supplyB = read.csv("D:/supply_beras.csv",sep = ",")
     cb <- hangga$Karawang
-    supply <- ts(cb, start (2012,1), frequency = 12)
+    supply <- ts(cb, start = c(2012,1), frequency = 12)
     plot(supply)
     library(forecast)
     library(nnfor)
     #HW Produce
     hw <- HoltWinters(supply)
     plot(hw)
-    fhwp <- forecast(hw, h=90)
+    fhwp <- forecast(hw, h=30)
     detail <- accuracy(fhwp)
     #MLP Produce
     ml <- mlp(supply)
     plot(ml)
-    fmlpp = forecast(ml, h=90)
+    fmlpp = forecast(ml, h=30)
     detail2 <- accuracy(fmlpp)
     #ARIMA Produce
     ar <- auto.arima(supply)
-    farp <- forecast(ar, h = 140)
+    farp <- forecast(ar, h = 30)
     plot(farp)
     detail3 <- accuracy(farp)
     
     #Rice Price
-    hangga2 = read.csv("D:/harga_beras.csv", sep = ";")
+    hargaB = read.csv("D:/harga_beras.csv", sep = ";")
     cb2 <- hangga2$Jatim
-    supply2 <- ts(cb2, start (2017,1), frequency = 12)
+    supply2 <- ts(cb2, frequency = 12, start = c(2017,1))
     plot(supply2)
+    #HW Produce
+    hw2 <- HoltWinters(supply2)
+    plot(hw2)
+    fhwp2 <- forecast(hw2, h=30)
+    plot(fhwp2)
+    detail4 <- accuracy(fhwp2)
+    #MLP Produce
+    ml2 <- mlp(supply2)
+    plot(ml2)
+    fmlpp2 <- forecast(ml2, h=30)
+    plot(fmlpp2)
+    detail5 <- accuracy(fmlpp2)
+    #ARIMA Produce
+    ar2 <- auto.arima(supply2)
+    farp2 <- forecast(ar2, h = 30)
+    plot(farp2)
+    detail6 <- accuracy(farp2)
     output$detail <- renderText({ detail[,"MAPE"] })
     output$detail2 <- renderText({ detail2[,"MAPE"]})
     output$detail3 <- renderText({ detail3[,"MAPE"]})
