@@ -69,9 +69,9 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
     #Rice Produce
-    supplyB = read.csv("D:/supply_beras.csv",sep = ",")
-    cb <- hangga$Karawang
-    supply <- ts(cb, start = c(2012,1), frequency = 12)
+    SupplyBP = read.csv("D:/supply_beras.csv",sep = ",")
+    cb <- SupplyBP$Karawang
+    supply <- ts(cb, start = c(2015,5), frequency = 1)
     plot(supply)
     library(forecast)
     library(nnfor)
@@ -92,9 +92,9 @@ server <- function(input, output) {
     detail3 <- accuracy(farp)
     
     #Rice Price
-    hargaB = read.csv("D:/harga_beras.csv", sep = ";")
-    cb2 <- hangga2$Jatim
-    supply2 <- ts(cb2, frequency = 12, start = c(2017,1))
+    SupplyRP = read.csv("D:/harga_beras.csv", sep = ";")
+    cb2 <- SupplyRP$Jatim
+    supply2 <- ts(cb2, frequency = 1, start = c(2017,1))
     plot(supply2)
     #HW Produce
     hw2 <- HoltWinters(supply2)
