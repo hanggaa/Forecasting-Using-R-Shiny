@@ -18,13 +18,13 @@ ui <- dashboardPage(
             # First Tab Content
             tabItem(tabName = "dashboard1",
                     fluidRow(
-                        box(title = "Forecast Rice Produce Holt-Winter Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot1", height = 200),
+                        box(title = "Forecast Rice Produce Holt-Winter Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot1", height = 400),
                             verbatimTextOutput("detail")
                             ),
-                        box(title = "Forecast Rice Produce MLP Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot2", height = 200),
+                        box(title = "Forecast Rice Produce MLP Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot2", height = 400),
                             verbatimTextOutput("detail2")
                             ),
-                        box(title = "Forecast Rice Produce Auto-Arima Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot3", height = 200),
+                        box(title = "Forecast Rice Produce Auto-Arima Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot3", height = 400),
                             verbatimTextOutput("detail3")
                         )
                     )
@@ -69,9 +69,9 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
     #Rice Produce
-    SupplyBP = read.csv("D:/supply_beras.csv",sep = ",")
-    cb <- SupplyBP$Karawang
-    supply <- ts(cb, start = c(2015,5), frequency = 1)
+    supplyBeras = read.csv("D:/supply_beras.csv",sep = ",")
+    cb <- supplyBeras$Karawang
+    supply <- ts(cb, start = c(2015,5), frequency = 12)
     plot(supply)
     library(forecast)
     library(nnfor)
@@ -92,9 +92,9 @@ server <- function(input, output) {
     detail3 <- accuracy(farp)
     
     #Rice Price
-    SupplyRP = read.csv("D:/harga_beras.csv", sep = ";")
-    cb2 <- SupplyRP$Jatim
-    supply2 <- ts(cb2, frequency = 1, start = c(2017,1))
+    hargaBeras = read.csv("D:/harga_beras.csv", sep = ";")
+    cb2 <- hargaBeras$Jatim
+    supply2 <- ts(cb2, frequency = 12, start = c(2017,1))
     plot(supply2)
     #HW Produce
     hw2 <- HoltWinters(supply2)
