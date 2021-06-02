@@ -1,7 +1,7 @@
 # Forecasting-Using-R-Shiny
 
 # Introduction About Our Web APP
-Aplikasi kami adalah simpel aplikasi yang bisa meramalkan harga komoditas berdasarkan data lokal (Tanpa input (dalam pengembangan)), selanjutnya aplikasi kami mampu menampilkan tingkat akurasi dari peramalan yang telah diolah oleh sistem, setelah itu user (petani) dapat menggunakan hasil akurasi peramalan dan menganalisanya berdasarkan pengalaman mereka.
+Our application is a simple app that can forecast commodity prices based on local data (with input(on develop)). to continue our application can show the level of accuracy from the forecast that already process by the system. After that, the user (farmer) can use the result of the forecast and analyze it based on their experience.
 
 # Step-By-Step to replicate Our Web APP
 1. Clone repository
