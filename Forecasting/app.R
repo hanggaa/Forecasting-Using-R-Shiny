@@ -1,4 +1,7 @@
 ## app.R ##
+install.packages("shinydashboard")
+install.packages("forecast")
+install.packages("nnfor")
 library(shinydashboard)
 
 ui <- dashboardPage(
