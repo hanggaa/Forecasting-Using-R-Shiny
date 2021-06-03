@@ -27,4 +27,4 @@ Our application is a simple app that can forecast commodity prices based on loca
 - Server based at southeast asia 1 (Singapore)
 - Operating System based on Debian 9
 - RAM 2 GB
-- Memory size 8 GB
+- Machine type N2 4GB
