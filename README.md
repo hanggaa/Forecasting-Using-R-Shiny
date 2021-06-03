@@ -24,7 +24,7 @@ Our application is a simple app that can forecast commodity prices based on loca
 # Cloud Deployment
 - Deployment link : 34.126.155.212:8080
 - VM Information : 
-Server based at southeast asia 1 (Singapore)
-Operating System based on Debian 9
-RAM 2 GB
-Memory size 8 GB
+- Server based at southeast asia 1 (Singapore)
+- Operating System based on Debian 9
+- RAM 2 GB
+- Memory size 8 GB
