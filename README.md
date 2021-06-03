@@ -13,6 +13,15 @@ Our application is a simple app that can forecast commodity prices based on loca
 7. Open source code with R Studio
 8. Run APP
 
+
+# Cloud Deployment
+- Deployment link : 34.126.155.212:8080
+- VM Information : 
+  + Server based at southeast asia 1 (Singapore)
+  + Operating System based on Debian 9
+  + RAM 2 GB
+  + Machine type N2 4GB
+
 # About Author
 1. A0050399 - Michael Andrew Gunawan
 2. A0131310 - Dede Herman
@@ -20,11 +29,3 @@ Our application is a simple app that can forecast commodity prices based on loca
 4. C1901913 - Selviyani
 5. M3312953 - Salsafira Alfaina
 6. M3312951 - Tasya Aulia
-
-# Cloud Deployment
-- Deployment link : 34.126.155.212:8080
-- VM Information : 
-- Server based at southeast asia 1 (Singapore)
-- Operating System based on Debian 9
-- RAM 2 GB
-- Machine type N2 4GB
