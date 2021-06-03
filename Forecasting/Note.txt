@@ -1,1 +1,3 @@
-Lorem Ipsum Dolor Sit Amet
+This is R-Shiny Framework
+
+R-Shiny is Multiplatform framework from R to built up Android, iOS, Web APP with R Programming.

@@ -1,7 +1,4 @@
 ## app.R ##
-install.packages("shinydashboard")
-install.packages("forecast")
-install.packages("nnfor")
 library(shinydashboard)
 
 ui <- dashboardPage(
@@ -35,13 +32,13 @@ ui <- dashboardPage(
             # Second Tab Content
             tabItem(tabName = "dashboard2",
                     fluidRow(
-                       box(title = "Forecast Rice Price Holt-Winter Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot4", height = 200),
+                       box(title = "Forecast Rice Price Holt-Winter Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot4", height = 400),
                            verbatimTextOutput("detail4")
                            ),
-                       box(title = "Forecast Rice Price MLP Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot5", height = 200),
+                       box(title = "Forecast Rice Price MLP Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot5", height = 400),
                            verbatimTextOutput("detail5")
                        ),
-                       box(title = "Forecast Rice Price Auto-Arima Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot6", height = 200),
+                       box(title = "Forecast Rice Price Auto-Arima Method", status = "primary", solidHeader = TRUE, collapsible = TRUE, plotOutput("plot6", height = 400),
                            verbatimTextOutput("detail6")
                        )
                     )
@@ -72,9 +69,9 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
     #Rice Produce
-    supplyBeras = read.csv("D:/supply_beras.csv",sep = ",")
+    supplyBeras = read.csv("supply_beras.csv",sep = ",")
     cb <- supplyBeras$Karawang
-    supply <- ts(cb, start = c(2015,5), frequency = 12)
+    supply <- ts(cb, start = c(2017,5), frequency = 12)
     plot(supply)
     library(forecast)
     library(nnfor)
@@ -95,7 +92,7 @@ server <- function(input, output) {
     detail3 <- accuracy(farp)
     
     #Rice Price
-    hargaBeras = read.csv("D:/harga_beras.csv", sep = ";")
+    hargaBeras = read.csv("harga_beras.csv", sep = ";")
     cb2 <- hargaBeras$Jatim
     supply2 <- ts(cb2, frequency = 12, start = c(2017,1))
     plot(supply2)
