@@ -2,7 +2,7 @@
 Our application is a simple app that can forecast commodity prices based on local data (with input(on develop)). to continue our application can show the level of accuracy from the forecast that already process by the system. After that, the user (farmer) can use the result of the forecast and analyze it based on their experience.
 
 ## Disclaimer
-This app is still under development, so you'll keep getting some updates as long as we don't run out of innovation and the app isn't over yet. The simply is you get this Minimum Viable Product from os forecasting team.
+This app is still under development, so you'll keep getting some updates as long as we don't run out of innovation, keep research for more accurate results,  and the app isn't over yet. The simple is you get this Minimum Viable Product from os forecasting team.
 
 ## Setup
 The job of our application is to forecast the price and production of rice from our local data.
