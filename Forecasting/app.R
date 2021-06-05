@@ -60,6 +60,7 @@ ui <- dashboardPage(
             )
         )
     ),
+    #Integrate Dashboard
     dashboardPage(
         header,
         sidebar,
@@ -67,6 +68,7 @@ ui <- dashboardPage(
     )
 )
 
+#Our Server to get IO from User
 server <- function(input, output) {
     #Rice Produce
     supplyBeras = read.csv("supply_beras.csv",sep = ",")
