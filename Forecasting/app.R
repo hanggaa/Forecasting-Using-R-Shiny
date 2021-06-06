@@ -72,7 +72,7 @@ ui <- dashboardPage(
 server <- function(input, output) {
     #Rice Produce
     supplyBeras = read.csv("supply_beras.csv",sep = ",")
-    cb <- supplyBeras$Karawang
+    cb <- supplyBeras$Jabar
     supply <- ts(cb, start = c(2017,5), frequency = 12)
     plot(supply)
     library(forecast)
