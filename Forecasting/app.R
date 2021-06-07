@@ -83,7 +83,7 @@ server <- function(input, output) {
     fhwp <- forecast(hw, h=30)
     detail <- accuracy(fhwp)
     #MLP Produce
-    ml <- mlp(supply)
+    ml <- mlp(supply, hd=c(9,1))
     plot(ml)
     fmlpp = forecast(ml, h=30)
     detail2 <- accuracy(fmlpp)
@@ -105,7 +105,7 @@ server <- function(input, output) {
     plot(fhwp2)
     detail4 <- accuracy(fhwp2)
     #MLP Produce
-    ml2 <- mlp(supply2)
+    ml2 <- mlp(supply2, hd=c(9,1))
     plot(ml2)
     fmlpp2 <- forecast(ml2, h=30)
     plot(fmlpp2)
