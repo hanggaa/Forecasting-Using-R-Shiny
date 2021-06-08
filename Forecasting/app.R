@@ -78,7 +78,7 @@ server <- function(input, output) {
     library(forecast)
     library(nnfor)
     #HW Produce
-    hw <- HoltWinters(supply)
+    hw <- HoltWinters(supply, seasonal = "multiplicative")
     plot(hw)
     fhwp <- forecast(hw, h=30)
     detail <- accuracy(fhwp)
@@ -99,7 +99,7 @@ server <- function(input, output) {
     supply2 <- ts(cb2, frequency = 12, start = c(2017,1))
     plot(supply2)
     #HW Produce
-    hw2 <- HoltWinters(supply2)
+    hw2 <- HoltWinters(supply2, seasonal = "additive")
     plot(hw2)
     fhwp2 <- forecast(hw2, h=30)
     plot(fhwp2)
