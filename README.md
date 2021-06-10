@@ -25,11 +25,3 @@ The job of our application is to forecast the price and production of rice from 
   + Operating System based on Debian 9
   + RAM 2 GB
   + Machine type N2 4GB
-
-## About Author
-1. A0050399 - Michael Andrew Gunawan
-2. A0131310 - Dede Herman
-3. C3312952 - Annur Hangga Prihadi
-4. C1901913 - Selviyani
-5. M3312953 - Salsafira Alfaina
-6. M3312951 - Tasya Aulia
